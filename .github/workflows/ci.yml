@@ -1,42 +1,21 @@
 name: GitHub Actions
 on: push
 jobs:
-#  install:
-#    runs-on: ubuntu-latest
-#    container: node:14-alpine
-#    steps:
-#      - name: checkout
-#        uses: actions/checkout@v2
-#
-#      - name: install
-#        run: npm install --loglevel=error
-#
-#      - name: upload-artifact
-#        uses: actions/upload-artifact@v2
-#        with:
-#          name: installed-artifact
-#          paths: node_modules/
-#          retention-days: 1
-  lint:
-#    needs: install
+  lint-and-test:
     runs-on: ubuntu-latest
     container: node:14-alpine
     steps:
       - name: checkout
         uses: actions/checkout@v2
+
+      - name: install
+        run: npm install --loglevel=error
 
       - name: lint
         run: npm run lint
 
       - name: csslint
         run: npm run csslint
-  test:
-#    needs: install
-    runs-on: ubuntu-latest
-    container: node:14-alpine
-    steps:
-      - name: checkout
-        uses: actions/checkout@v2
 
       - name: test
         run: npm run test
