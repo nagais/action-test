@@ -15,7 +15,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: installed-artifact
-          paths: node_modules/
+          path: node_modules/
           retention-days: 1
   lint:
     needs: install
