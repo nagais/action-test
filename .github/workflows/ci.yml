@@ -18,7 +18,7 @@ jobs:
 #          paths: node_modules/
 #          retention-days: 1
   lint:
-    needs: install
+#    needs: install
     runs-on: ubuntu-latest
     container: node:14-alpine
     steps:
@@ -31,7 +31,7 @@ jobs:
       - name: csslint
         run: npm run csslint
   test:
-    needs: install
+#    needs: install
     runs-on: ubuntu-latest
     container: node:14-alpine
     steps:
